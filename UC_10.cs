@@ -12,9 +12,9 @@ namespace EmployeeWageCalculation
         {
             this.CompanyLists = new CompanyList[5];
         }
-        public void addCompany(string Company, int EMP_RATE_PER_HOUR, int NUM_WORKING_DAYS, int MAX_HRS_IN_MONTH)
+        public void addCompany(string Company, int EMP_RATE_PER_HOUR, int NO_WORKING_DAYS, int MAX_HRS_IN_MONTH)
         {
-            CompanyLists[this.numOfCompany] = new CompanyList(Company, EMP_RATE_PER_HOUR, NUM_WORKING_DAYS, MAX_HRS_IN_MONTH);
+            CompanyLists[this.numOfCompany] = new CompanyList(Company, EMP_RATE_PER_HOUR, NO_WORKING_DAYS, MAX_HRS_IN_MONTH);
             numOfCompany++;
         }
         public void ComputeEmpWage()
@@ -30,7 +30,7 @@ namespace EmployeeWageCalculation
         {
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 
-            while (totalEmpHrs <= companyList.MAX_HRS_IN_MONTH && totalWorkingDays < companyList.NUM_WORKING_DAYS)
+            while (totalEmpHrs <= companyList.MAX_HRS_IN_MONTH && totalWorkingDays < companyList.NO_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
