@@ -21,16 +21,19 @@ namespace EmployeeWageCalculation
         {
             for ( int i = 0; i < numOfCompany; i++)
             {
-                CompanyLists[i].setTotalEmpWage(this.ComputeEmpWage(this.CompanyLists[i]));
+                var companyDetails = CompanyLists[i];
+                var salary = ComputeEmpWage(companyDetails);
+
+                CompanyLists[i].setTotalEmpWage(salary);
                 Console.WriteLine(this.CompanyLists[i].toString());
             }
         }
 
-        private int ComputeEmpWage(CompanyList companyList)
+        private int ComputeEmpWage(CompanyList companyDetails)
         {
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 
-            while (totalEmpHrs <= companyList.MAX_HRS_IN_MONTH && totalWorkingDays < companyList.NO_WORKING_DAYS)
+            while (totalEmpHrs <= companyDetails.MAX_HRS_IN_MONTH && totalWorkingDays < companyDetails.NO_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -50,7 +53,7 @@ namespace EmployeeWageCalculation
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day#:" + totalWorkingDays + " EmpHrs: " + empHrs);
             }
-            return totalEmpHrs * companyList.EMP_RATE_PER_HOUR;
+            return totalEmpHrs * companyDetails.EMP_RATE_PER_HOUR;
         }
         
     }

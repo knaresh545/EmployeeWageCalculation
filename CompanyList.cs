@@ -12,7 +12,7 @@
         {
             this.Company = Company;
             this.EMP_RATE_PER_HOUR = EMP_RATE_PER_HOUR;
-            this.NO_WORKING_DAYS = this.NO_WORKING_DAYS;
+            this.NO_WORKING_DAYS = NO_WORKING_DAYS;
             this.MAX_HRS_IN_MONTH = MAX_HRS_IN_MONTH;
         }
         public void setTotalEmpWage(int totalEmpWage)
